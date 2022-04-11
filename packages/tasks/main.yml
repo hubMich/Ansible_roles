@@ -1,0 +1,7 @@
+---
+ - name: Instalacja wielu pakietów
+   package:
+     name:
+       - unzip
+       - net-tools
+     state: present

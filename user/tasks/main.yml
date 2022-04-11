@@ -1,0 +1,19 @@
+---
+ - name: Dodaj grupe
+   group:
+     name: "panda"
+     state: present
+
+
+ - name: Dodaj użytkownika
+   user:
+     name: panda
+     shell: /bin/bash
+     groups: sudo,panda
+     append: yes
+
+ - name: auth keys
+   ansible.posix.authorized_key:
+     user: panda
+     state: present
+     key: "{{ lookup('file', '/home/vagrant/.ssh/authorized_keys') }}"
