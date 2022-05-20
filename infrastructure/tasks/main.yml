@@ -8,7 +8,7 @@
     repo: "{{ git_repository }}"
     dest: "{{ deployment_path }}"
     version: "{{ git_branch }}"
-- name: `docker-compose up`
+- name: Compose
   docker_compose:
     project_src: "{{ deployment_path }}"
     build: yes
